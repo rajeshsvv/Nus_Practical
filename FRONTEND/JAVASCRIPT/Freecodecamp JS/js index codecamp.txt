@@ -1,0 +1,150 @@
+total 12 parts  12*10=120 parts
+ 
+1)	comment your Javascript code 4:22
+2)	data types and variables 5:58
+3)	storing values with assignment operator 9:14
+4)	initializing variables with assignment operator 11:33
+5)	uninitialized variables 12:00
+6)	case sensitivity in variables 12:41
+7)	adding numbers 14:05
+8)	subtracting numbers 14:36
+9)	multiplying numbers 14:53
+10)	dividing numbers15:11
+
+
+11)incermenting numbers 15:30
+12)decrementing numbers15:59
+13)decimal numbers 16:23
+14)multiply decimals 16:50
+15)divide decimals 17:18
+16)finding a remainder 17:35
+17)compound assignment with augmented addition 18:22
+18)compound assignment with augmented subtraction 19:21
+19)compound assignment with augmented multiplication 20:20
+20)compound assignment with augmented division 20:52
+
+
+
+21)declare string variables 21:21
+22)escaping literal quotes in strings 22:02
+23)quotinq strings with single quotes 22:43
+24)escape sequences in strings 25:19
+25)concatenating string with plus operator 26:48
+26)concatenating string with variables 29:01
+27)appending variables to strings 30:15
+28)find a length of string 31:12
+29)bracket notation to find first character in string 32:01
+30)bracket notation to find Nth character in string34:24
+
+
+31)bracket notation to find last character in string 34:54
+32)word blanks 36:31
+33)store multiple values with arrays 40:45
+34)nested arrays 41:44
+35)access array data with indexes 42:35
+36)modify array data with indexes 43:37
+37)access multi-dimensional arrays with indexes 44:47
+38)manipulate arrays with pop() 47:28
+39)manipulate arrays with shift() 48:35
+40)manipulate arrays with unshift() 49:23
+
+
+41)shopping list 50:37
+42)write reusable code with functions 51:43
+43)passing values to functions with arguments 53:41
+44)global scope and functions 55:44
+45)local scope and functions 59:32
+46)understand undefined value returned from a function 1:03:56
+47)assignment with a returned value 1:04:53
+48)stand in line 1:05:53
+49)boolean values 1:08:41
+50)use conditional logic with if statements 1:09:24
+
+
+51)comparison with the strict equality operator 1:13:20
+52)practice comparing different values 1:14:42
+53)comparison with inequality operator1:15:38
+54)comparison with greater than or equal to operator1:17:39
+55)comparison with less than or equal to operator1:18:45
+56)comparison with the logical and operator1:19:18
+57)comparison with the logical or operator 1:20:42
+58)else statements 1:21:38
+59)else if statements 1:22:28
+60)chaining if else statements 1:24:45
+
+
+
+61)golf code 1:27:47
+62)switch statement1:32:14
+63)default option in switch statements 1:35:46
+64)multiple identical options in switch statements 1:37:25
+65)replacing if else chins with switch 1:39:20
+66)returning boolean value form functions1:41:11
+67)returning an early pattern from functions1:42:20
+68)counting cards 1:43:38
+69)build javascript objects1:49:12
+70)accessing object properties with dot notation1:50:47
+
+
+
+71)accessing object properties with bracket notation1:51:34
+72)accessing object properties with variables1:52:48
+73)updating object properties 1:53:36
+74)add new property to an object 1:54:31
+75)delete properties form an object1:55:19
+76)using objects for lookups 1:55:55
+77)testing objects for properties 1:57:46
+78)manipulating complex objects1:59:15
+79)accessing nested objects 2:01:03
+80)accessing nested arrays 2:01:52
+
+
+
+81)record collection 2:03:05
+82)iterate with while oop 2:10:15
+83)iterate with for loops 2:11:34
+84)iterate odd numbers with a for loop 2:13:56
+85)count backwards with a for loop2:15:29
+86)iterative through an array with for loop 2:17:08
+87)nesting for loops 2:19:43
+88)nesting with do..while loops 2:22:45
+89)profile lookup 2:24:12
+90)generate random fractions 2:28:18
+
+
+
+91)generate random whole numbers 2:28:55
+92)generate random whole numbers within a range 2:30:24
+93)use the parseInt function 2:31:47
+94)use the parseInt function with a radix 2:32:37
+95)use the conditional(ternary) operator 2:33:29
+96)use multiple conditional (ternary)operators 2:34:58
+97)difference between the var and let keywords2:36:58
+98)compare scopes of the var and let keywords2:39:05
+99)declare a read-only variable with the const keyword2:41:35
+100)mutate an array declared with const 2:43:41
+
+
+101)prevent object mutation 2:44:53
+102)use arrow function to write concise anonymous functions 2:47:17
+103)write arrow functions with parameters 2:48:23
+104)write higher order arrow functions2:49:26
+105)write higher order arrow functions 2:53:05
+106)use the spread operator to evaluate arrays In-Place 2:55:33
+107)use destruction in assignment to assign variables from objects 2:57:18
+108)destructuring assignment with nested objects 3:00:17
+109)use destructuring assignment to assign variables from arrays 3:01:54
+110)use destructuring assignment with the rest operator 3:03:42
+
+
+111)create string using template literals 3:06:39
+112)write concise object literal declarations using simple fields 3:10:47
+113)write concise declarative functions 3:12:24
+114)use class syntax to define a constructor function 3:12:59
+115)use getters and setters to control access to an object 3:15:10
+116)understanding the differences between import and require 3:20:25
+117)use export to reuse a code block 3:22:33
+118)use * to import everything from a file 3:23:40
+119)create an export fallback with export default 3:24:50
+120)import a default export 3:25:25
+121)Outro  3:26:18?

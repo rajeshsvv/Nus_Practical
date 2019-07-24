@@ -1,0 +1,54 @@
+<!-- You might have encountered a situation where you clicked a URL to reach a page X
+ but internally you were directed to another page Y. 
+It happens due to page redirection. This concept is different from JavaScript Page Refresh. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<!-- Page Redirection -->
+    <!-- <script type="text/javascript">
+        function Redirect()
+        {
+            window.location="https://www.roivant.com";
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Redirect Me" onclick="Redirect();"/>
+    </form> -->
+
+<!-- show an appropriate message to your site visitors before redirecting them to a new page -->
+        <!-- <script type="text/javascript">
+            function Redirect()
+            {
+                window.location="https://www.roivant.com";
+            }
+            document.write("you will be redirected to main page in 10 sec");
+            setTimeout('Redirect()',5000);
+        </script> -->
+
+<!-- how to redirect your site visitors onto a different page based on their browsers. -->
+        <script type="text/javascript">
+            var browsername=navigator.appName;
+            if(browsername=="Netscape")
+            {
+                window.location="http://ucbrowser.com";
+            }
+            else if(browsername=="Internet Explorer")
+            {
+                window.location="http://www.microsoft.com";
+            }
+            else
+            {
+                window.location="http://ucbrowser.com";
+            }
+
+        </script>
+</body>
+</html>

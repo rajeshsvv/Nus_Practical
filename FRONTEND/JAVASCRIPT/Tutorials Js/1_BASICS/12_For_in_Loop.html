@@ -1,0 +1,32 @@
+<!-- The for...in loop is used to loop through an object's properties -->
+
+<!-- The syntax of ‘for..in’ loop is −
+for (variablename in object) {
+   statement or block to execute
+}
+In each iteration, one property from object is assigned to variablename and this loop continues
+till all the properties of the object are exhausted.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script tyep="text/javascript">
+        var aProperty;
+        document.write("Navigator Object Properties <br/> ")
+        for(aProperty in navigator)
+        {
+            document.write(aProperty);
+            document.write("<br/>")
+        }
+        document.write("Exiting the Loop");
+    </script>
+</body>
+</html>

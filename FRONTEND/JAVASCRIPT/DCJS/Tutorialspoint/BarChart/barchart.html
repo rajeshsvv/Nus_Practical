@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/dc.css"/>
+
+    <script src = "js/d3.js"></script>
+    <script src = "js/crossfilter.js"></script>
+    <script src = "js/dc.js"></script>
+</head>
+<body>
+        <div>
+                <div id = "bar"></div>
+             </div>
+       
+             <script language = "javascript">
+                var chart = dc.barChart('#bar');
+       
+                d3.csv("\DCJS\Tutorialspoint\people.csv", function(errors, people) {
+                   var mycrossfilter = crossfilter(people);
+       
+                   var ageDimension = mycrossfilter.dimension(function(data) { 
+                      return ~~((Date.now() - new Date(data.DOB)) / (31557600000)) 
+                   });
+                   var ageGroup = ageDimension.group().reduceCount();
+       
+                   chart
+                      .width(800)
+                      .height(300)
+                      .x(d3.scale.linear().domain([15,70]))
+                      .brushOn(false)
+                      .yAxisLabel("Count")
+                      .xAxisLabel("Age")
+                      .dimension(ageDimension)
+                      .group(ageGroup)
+                      .on('renderlet', function(chart) {
+                         chart.selectAll('rect').on('click', function(d) {
+                            console.log('click!', d);
+                         });
+                      });
+                   chart.render();
+                });
+             </script>
+</body>
+</html>

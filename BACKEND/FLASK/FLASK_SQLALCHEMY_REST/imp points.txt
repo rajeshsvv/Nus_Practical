@@ -1,0 +1,64 @@
+                                REST API MOSH
+
+https://www.youtube.com/watch?v=SLwpqD8n3d0
+
+rest is basically convention  for building these HTTP services.
+we use simple http protocol principles to prrovide suppport to create read update and delete data.
+we refer to these operatios are called as crud operations.
+
+vidly for renting out movies
+have a client app where we manage the list of our customers.
+on server we expose a service and an endpoint like this.
+http://vidly.com/api/customers
+
+the client can send http requests to this endpoint to talk to our services.
+
+the address can start with http or https(depends on application and requirements)
+if u want data to be exchanged on a secure channel you would use HTTPS.
+
+domain of the application       vidly.com
+
+/api is not mandatory
+
+/customers---refers to collection of customers in our application.
+
+
+in the rest world we refer this part as resource.
+we can expose our resources such as customers movies rentals on various endpoints.
+
+the type of http request determines the type of the operation.
+
+every http request what we called as verb or method that determines its type or intension.
+
+HTTP METHODS:
+get-getting data
+post-creating the data
+put-for updating data
+delete-for deleteing the data
+
+
+                                SOAP VS REST                https://www.youtube.com/watch?v=bPNfu0IZhoE
+
+70% of public api's are rest api's
+(u need to select SOAP or rest based on the programming language u use and the requirements)
+
+soap is heavy weight  choice for web service access.
+
+SOAP                                                        REST                                                
+PROS:
+language,Platform Transport Independent               it requires the use of HTTP.
+works well in distributed enterprise environment      it asssumes direct point to point communication 
+standardized                                           easier to use for most part and more flexible
+pre build extensibility in form of ws standards         no expensive tools requires to interact with web services
+built in error handling                                 smaller learning curve
+Automation whne used with certain language products.    Efficient
+uses xml for all messages                               it use smaller message formats 
+                                                        Fast(no extensive processing required) 
+                                                        closer to other web technologies in design philosophy.
+                                                        
+
+
+
+ 
+
+

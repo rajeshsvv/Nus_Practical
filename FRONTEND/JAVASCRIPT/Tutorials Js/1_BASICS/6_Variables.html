@@ -1,0 +1,85 @@
+<!-- JavaScript also defines two trivial(small thing) data types, null and undefined, 
+each of which defines only a single value
+In addition to these primitive data types, JavaScript supports a composite data type known as object.
+
+JavaScript does not make a distinction between integer values and floating-point values. 
+All numbers in JavaScript are represented as floating-point values. 
+JavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard. 
+
+JavaScript Variables:
+var money;
+        var name;
+        var name,money; declare like this
+
+Storing a value in a variable is called variable initialization. 
+You can do variable initialization at the time of variable creation 
+or at a later point in time when you need that variable
+
+Note − Use the var keyword only for declaration or initialization, 
+once for the life of any variable name in a document. 
+You should not re-declare same variable twice.
+
+JavaScript is untyped language. This means that a JavaScript variable can hold a value of any data type. 
+Unlike many other languages, you don't have to tell JavaScript during variable declaration 
+what type of value the variable will hold. 
+The value type of a variable can change during the execution of a program 
+and JavaScript takes care of it automatically.
+
+JavaScript Variable Scope:
+The scope of a variable is the region of your program in which it is defined. 
+JavaScript variables have only two scopes.
+
+Global Variables − A global variable has global scope which means it can be defined anywhere in your 
+JavaScript code.
+
+Local Variables − A local variable will be visible only within a function where it is defined. 
+Function parameters are always local to that function.
+
+
+Within the body of a function, a local variable takes precedence over a global variable
+ with the same name. 
+ If you declare a local variable or function parameter with the same name as a global variable, 
+ you effectively hide the global variable
+
+ JavaScript variable names are case-sensitive. For example, Name and name are two different variables.
+ reserved words cannot be used as JavaScript variables, functions, methods, loop labels, or any object names.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variables</title>
+
+    <script type="text/javascript">
+        // declare variables like this
+        var money="global";
+        var name;
+        var name,money;
+
+        
+        var name = "Ali";
+        var money;
+        money = 2000.50;
+
+        var myVar="global";
+        function checkscope()
+        {
+            var myVar="local";
+            var money="local"
+            document.write(myVar);
+        }
+   
+
+    </script>
+
+    
+</head>
+<body>
+    <input type="button" onclick="checkscope()" value="result">
+    
+</body>
+</html>

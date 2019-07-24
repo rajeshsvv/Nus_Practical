@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image_links</title>
+</head>
+<body>
+    <!-- <a href = "https://www.tutorialspoint.com" target = "_self"> 
+        <img src = "Tutorialspoint\Images\ocean.jpg" title="Image"  alt = "Tutorials Point" border = "0"/> -->
+
+
+<!-- Mouse-Sensitive Images -->
+<!-- The HTML and XHTML standards provides a feature that lets you embed many different links 
+inside a single image. -->
+
+<!-- Server-side image maps − This is enabled by the ismap attribute of the <img> tag 
+and requires access to a server and related image-map processing applications.
+
+Client-side image maps − This is created with the usemap attribute of the <img> tag, 
+along with corresponding <map> and <area> tags. -->
+
+<!-- Server-Side Image Maps -->
+    <a href = "/cgi-bin/ismap.cgi" target = "_self"> 
+    <img ismap src = "\Tutorialspoint\images\ocean.jpg" alt = "Tutorials Point" title="Image" border = "0"/> 
+    </a>
+
+    <!-- Client-Side Image Maps -->
+
+    <p>Search and click the hotspot</p>
+      <img src = "\Tutorialspoint\images\track.jpg" alt = "HTML Map" border = "0" usemap = "#html"/>
+      <!-- Create  Mappings -->
+      
+        <map name = "html">
+         <area shape = "circle" coords = "20,40,60" 
+            href = "\Tutorialspoint\images\track.jpg" alt = "CSS Link" target = "_self" />
+         
+         <area shape = "rect" coords = "5,5,40,40" alt = "jQuery Link" 
+            href = "\Tutorialspoint\images\tatoo.jpg" target = "_self" />
+        </map>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <script>
+        data=[10,20,30,40,50]
+
+        // in browser console u  need to check like this:
+	data.shift()				//10
+	data.sort(d3.descending)	//50 40 30 20 10
+	d3.min(data)	//it gives minimum value	10
+	d3.max(data)	//it gives maximum value	50
+	d3.extent(data)	   			//[10,50]
+	d3.sum(data)				//150
+	d3.mean(data)				//30
+	d3.median(data)				//30
+	d3.shuffle(data)			//[50,30,20,10,40] randomly shuffle the order k
+    </script>
+</body>
+</html>

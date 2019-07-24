@@ -1,0 +1,210 @@
+<!-- The HTML tables allow web authors to arrange data like 
+text, images, links, other tables, etc. into rows and columns of cells. -->
+
+<!-- The HTML tables are created using the <table> tag in which the <tr> tag is used to create table rows
+and <td> tag is used to create data cells. 
+The elements under <td> are regular and left aligned by default -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML-TABLES</title>
+</head>
+<body>
+<!-- Example -->
+    <!-- <table border="1" align="center">
+        <tr>
+         
+                <td>Row 1,Column 1</td>
+                <td>Row 1,Column 2</td>
+    
+        </tr>
+        <tr>
+            
+                <td>Row 2,Column 1</td>
+                <td>Row 2,Column 2</td>
+            
+        </tr>
+    </table> -->
+
+<!-- Table Heading -->
+    <!-- <table border = "1">
+            <tr>
+               <th>Name</th>
+               <th>Salary</th>
+            </tr>
+            <tr>
+                <td>Ramesh Raman</td>
+                <td>5000</td>
+            </tr>
+            
+            <tr>
+               <td>Shabbir Hussein</td>
+               <td>7000</td>
+            </tr>
+         </table> -->
+
+<!-- Cellpadding and Cellspacing Attributes -->
+    <!-- <table border = "1" cellpadding = "4" cellspacing = "4">
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+            <tr>
+                <td>Ramesh Raman</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>Shabbir Hussein</td>
+                <td>7000</td>
+            </tr>
+    </table> -->
+
+<!-- Colspan and Rowspan Attributes -->
+        <!-- <table border = "1">
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+            <tr>
+                <td rowspan = "3">Row 1 Cell 1</td>
+                <td>Row 1 Cell 2</td>
+                <td>Row 1 Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 2 Cell 2</td>
+                <td>Row 2 Cell 3</td>
+            </tr>
+            <tr>
+                <td colspan = "2">Row 3 Cell 1</td>
+            </tr>
+        </table> -->
+
+<!-- Tables Backgrounds -->
+<!-- Note − The bgcolor, background, and bordercolor attributes deprecated in HTML5. 
+    Do not use these attributes.     -->
+
+    <!-- <table border = "1" bordercolor = "green" bgcolor = "lightgreen">
+            <tr>
+               <th>Column 1</th>
+               <th>Column 2</th>
+               <th>Column 3</th>
+            </tr>
+            <tr>
+               <td rowspan = "2">Row 1 Cell 1</td>
+               <td>Row 1 Cell 2</td>
+               <td>Row 1 Cell 3</td>
+            </tr>
+            <tr>
+               <td>Row 2 Cell 2</td>
+               <td>Row 2 Cell 3</td>
+            </tr>
+            <tr>
+               <td colspan = "3">Row 3 Cell 1</td>
+            </tr>
+    </table> -->
+
+    <!-- <table border = "1" bordercolor = "green" background = "~\D:\Images\ocean.jpg\">
+        <tr>
+           <th>Column 1</th>
+           <th>Column 2</th>
+           <th>Column 3</th>
+        </tr>
+        <tr>
+           <td rowspan = "2">Row 1 Cell 1</td>
+           <td>Row 1 Cell 2</td><td>Row 1 Cell 3</td>
+        </tr>
+        <tr>
+           <td>Row 2 Cell 2</td>
+           <td>Row 2 Cell 3</td>
+        </tr>
+        <tr>
+           <td colspan = "3">Row 3 Cell 1</td>
+        </tr>
+     </table> -->
+
+<!-- Table Height and Width -->
+
+    <!-- <table border = "1" width = "250" height = "40">
+        <tr>
+            <td>Row 1, Column 1</td>
+            <td>Row 1, Column 2</td>
+        </tr>
+
+        <tr>
+            <td>Row 2, Column 1</td>
+            <td>Row 2, Column 2</td>
+        </tr>
+    </table> -->
+
+<!-- Table Caption -->
+
+    <!-- <table border = "1" width = "100%">
+        <caption>This is the caption</caption>
+        
+        <tr>
+            <td>row 1, column 1</td><td>row 1, columnn 2</td>
+        </tr>
+        
+        <tr>
+            <td>row 2, column 1</td><td>row 2, columnn 2</td>
+        </tr>
+    </table> -->
+
+<!-- Table Header, Body, and Footer -->
+
+    <!-- <table border = "1" width = "100%">
+        <thead>
+            <tr>
+                <td style="background-color:green;align-self: auto;" colspan = "4">This is the header of the table</td>
+            </tr>
+        </thead>
+        
+        <tfoot>
+            <tr>
+                <td style="background-color:orange; align-self: auto;"colspan = "4">This is the footer of the table</td>
+            </tr>
+        </tfoot>
+        
+        <tbody>
+            <tr style="background-color:white">
+                <td>Cell 1</td>
+                <td>Cell 2</td>
+                <td>Cell 3</td>
+                <td>Cell 4</td>
+            </tr>
+        </tbody>
+        
+    </table> -->
+
+<!-- Nested Tables -->
+
+<table border = "10" width = "100%">
+         
+        <tr>
+           <td>
+              <table border = "1" width = "100%">
+                 <tr>
+                    <th>Name</th>
+                    <th>Salary</th>
+                 </tr>
+                 <tr>
+                    <td>Ramesh Raman</td>
+                    <td>5000</td>
+                 </tr>
+                 <tr>
+                    <td>Shabbir Hussein</td>
+                    <td>7000</td>
+                 </tr>
+              </table>
+           </td>
+        </tr>
+        
+</table>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+how to create sqlite db file
+
+open terminal and enter into python command
+
+from api import db
+db.create_all()
+
+app.config["SECRET_KEY"]="thissecret"
+basedir = os.path.abspath(os.path.dirname(__file__))
+# Database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'todo.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_DATABAESE_URI']='sqlite3:///D:\NOUS\DEVELOPER\BACKEND\FLASK\PRACTICE\PRETTY PRINTED REST\todo.db'
+
+
+then sqlite file will be generated in project directory.
+
+then u exit from python terminal by enter exit() ok.
+
+sqlite3 todo.db (this is not working in windows just check once)
+
+jsonify is for to return the information in json format(10:57)
+uuid is for to generate random public id.
+for password hashing function we use werkzurg.security k
+
+once put the passwords in the database need to be hashed for this we import check_password_hash(11:40)
+
+uuid is for public id(in create route k)13:02
+
+in postman for create a user give name and password k with , then new user created and after that
+get all the users method then it will give password hash k
+
+get all users (15:50)
+loop over the result because he dont want put the data into json object directly..
+need to create a new list to store the result.
+righthand side is the result from the database & from lefthand side is the new dictionary we creating.
+
+lets get started working on the actual authentication.
+
+login route(22:08)
+this route allow me took username and password for user enter it using basic authentication
+and then return get a token.
+this token will expire after some time.
+and with that token will put in header for all subsequent requests.so we can be constantly authenticated 
+without having to login using username and password every single time.
+
+first meaning the only user because the name should be unique.(24:30)
+
+import jwt (this will get error because u dont have jwt first so install by this command pip install PyJWT==1.0.1)
+
+26:38
+expiration will be typical UNIX UTC timestamp
+timedelta is for minutes =30 upto 30 minutes toke will alive(active) after that it will expires.
+app.config['SECRET-KEY'] to encode the token
+
+27:41
+
+there are three cases in login gets passed back when they dont supply any authorization information 
+when there is no user in the database for the user they pass in 
+or the password is incorrect.
+
+
+28:30
+now check in postman with login route u got token for Rob and Antony 
+so with this token we will authenticate subsequent requests to all the routes so only the login route 
+works with HTTP basic authentication.
+and all the other routes will work with token.
+create decorator to work with the token.
+this case will be using header to actually get the token.
+
+start from 29:16 K token required function.
+
+end of user routes  35:42
+ create routes handle the actual todo items to get the functionality 
+
+ 41:01
+need to query the database for all the todo items that belong to the current logged in user.
+
+
+
+
+
+

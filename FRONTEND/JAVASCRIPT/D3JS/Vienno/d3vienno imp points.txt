@@ -1,0 +1,183 @@
+				index
+
+1	introduction:(5:43)
+
+	Document object model(4:12)
+	DOM which is basically refers to hirarchecal structure of the web page.
+
+2 	Select and Append(10:39)
+	selecting and appending elements to our web page.
+	d3 is object it is collection of complex data.(5:37)
+	
+
+3 	Basic SVG graphs(11:01)
+	Scalable vector graphics to create  two dimensional graphics on our web page.
+	when styling svg elements we use attr method instead of style .(5:00)
+	in svg we dont use color we use fill(property) k.(7:46)
+	when u visualize the data it is large dataset in file somewhere like suv file or json file 
+	there are different file formats for storing the data
+
+4 	Visualizing data(13:15)
+	how to actually bind data to our visualization or in other words visualize the data on our 
+	webpage using d3.
+	visualize a basic dataset.
+	selectall introduced here is similar to the select method.
+	enter method::::(5:19) contains placeholders for each data point or each data element 
+	for which there are no corresponding DOM elements.
+	functions work in javascript (7:46) essentially it takes an input does something to it returns 
+	a value of some sort.purpose of this we set width
+	attributes with the help of function instead of hard coding.
+	function(d) stands for each data element  that we have in our placeholder selection in our enter 
+	selection.
+
+
+5 	Scales:(10:40)
+	d3.scale.linear    we use this to set the scaling things use domain and range.
+
+6	Groups and Axis(7:41)
+	1-how to group SVG elements so that we can transform them as whole.
+	group element which is which is component of SVG. with the help of append("g")
+	it allows us to apply transformations to whole group to all of the four rectangles in bar chart. 
+	trnaform(2:05)::::is used to for things like moving the group to the right, moving it down the page,
+	or rotating it these kind of things.
+
+	2-how to add an axes to bar chart(3:55)
+	d3.svg.axis() we use this to make axis.
+	scale method of the axis object k got it.
+	
+
+7  	Enter Update Exit(11:59):
+	 DOM Elements<data elements(enter)  result section name it is
+	 DOM elements=data elements(update)
+	 DOM Elements>data elements(exit)
+
+
+
+8 	Transitions(6:24)
+	transitions are basically like animations you change property of some object and apply 
+	it smoothly over time.
+	so its not change instantaneously but rather creates an animated effect.
+	ex:circle.transition().attr("cx",50);
+	each method is called an event listener so if you add this after our transition.function 
+	will run after the transition has ended.
+
+9 	Working with Arrays(4:53)
+	how to work with arrays in d3.data is somehow going to consist of an array or multiple arrays 
+	how to work in console window for javascript he shows follow it(2:00 onwards)
+	in console window:
+	data=[10,20,30,40,50]
+	data.shift()				10
+	data.sort(d3.descending)		50 40 30 20 10
+	d3.min(data)	it gives minimum value	10
+	d3.max(data)	it gives maximum value	50
+	d3.extent(data)				[10,50]
+	d3.sum(data)				150
+	d3.mean(data)				30
+	d3.median(data)				30
+	d3.shuffle(data)			[50,30,20,10,40] randomly shuffle the order k
+
+
+10	Loading External Data(11:06) json file loading problem check this.
+	Load External data like csv or json file.
+	d3.json("path",function())   likke this.............
+	d3.svc("path",function())
+	how to create path data explained here(5:30)
+	we create one variable that will translate our data into path data(string number data) 
+	like we saw in browser inspect d3js example source code.
+	how to debugging code in d3js(8:00)
+
+	error is:
+	Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource 
+	at file:///g:/4%20PYTHON/PRACTICE/5%20D3JS/LoadExdata.json. 
+	(Reason: CORS request not http).
+
+	solution:
+	run http-server in git bash in project path
+	in browser give like this instead of loading file u have to give localhost path from git bash prompt
+	http://192.168.0.101:8080/10_Load_External_data.html
+
+	http://192.168.0.101:8080    u get this when u run http-server from git bash prompt
+	10_Load_External_data.html   this is u r file name.
+
+
+11 	Paths(9:25)
+	this is a new component of SVG.
+	paths are just as rectangles and circles.
+	paths can usually be used to create any shape whatever that we would like to.
+	path data is stored in the D attribute.(reference example from d3js.org one of the example 
+	inspect source code)
+	d3 provides us with a number of so called path generators(1:36)
+	once again d attribute stores the path data.  
+
+12 	Arcs(5:33) DONUT CHART:
+	how to create a DONUT chart
+	for this we need to learn how to create a arc in d3js
+	An arc is simple par of circle.
+	each of the parts in circle are called arcs.
+	here we use new path generator called arc path generator.
+	d refers to the path generator.path generator for arcs has four accessor functions.
+	--->innerRadius  outerRadius startAngle endAngle 
+	in d3 we measure the angle with radians not with degrees k (2:48)
+	full circle is 6.28 radians.
+
+	
+	
+13 	The Pie layout(14:27):
+	The Pie Layout.
+	create a group to store our arc visualization.
+	two aspects for the donut chart.
+	1-arc path generator
+	2-layout  (different layouts are available in d3js)
+	each layout takes a set of data and it calculates and return something different.(2:00)
+	and for pie layout it takes all our data and for each data element it returns an object 
+	with start angle and then end angle and also a value property.
+	which contains actual value.
+	var pie=d3.layout.pie()
+	(11:46) new method of the arc path generator is centroid.	
+
+14 	The Tree Layout Part 1(7:00):
+	how to create a tree layout in D3JS.
+	a tree layout is a hirarchical structure.
+	we want to display hirarchical display as opposed to flat relationships 
+	if you will that used in our pie layout.
+	d3 provides path generator which is called diagonal.which calculates the distance between the nodes.
+	and returns the path with the nice curve.
+	in first part he will show how to create diagonal curve part.
+	second part he will show whole diagonal  tree layout.
+	the diagonal path generator its look like arc path generator.
+	to create diagonal generator var diagonal=d3.svg.diagonal()
+	what special about diagonal generator (4:19)
+	it expects to objects(source object,target object)
+	source object=starting point of the path
+	target object=ending point of our path
+	data for source and target in this videoo we create.
+	but in part 2 tree layout will only provide source and target attributes 
+	so we dont need to provide it k got it.
+
+15 	The tree layout Part 2(12:49):  json file loading problem check this(done check paths when u give)
+	to create a  tree layout we need to create the layoout itself.
+	var tree=d3.layout.tree()
+	all the layouts are both functions and objects.
+
+
+16	Cluster Pack and bubble Layouts(13:42):
+	cluster is same as tree just replace with tree as cluster. if u add extra nodes.
+	pack 
+
+	
+
+17	The Histogram Layout Part 1
+
+18 	The Histogram Layout Part 2
+
+19 	The Treemap Layout:
+	we use it to visualize the hirarchichal data.
+	
+
+20	Maps in D3(10:58)
+	whenever u want to create map you need to have some get some map data.
+	he referenced the data from geojson.these data referenced from shape file 
+	which is another file format for storing geographic data and its much more common 	
+	than the geojson file format
+	he used QGIS to convert shapefile to gejson format
+ 

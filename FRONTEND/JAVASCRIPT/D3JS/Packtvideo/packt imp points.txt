@@ -1,0 +1,42 @@
+									INDEX
+
+
+1	setup a process(4:09)
+
+
+
+2	understanding SVGs(3:17)
+	An XML based vector image format for 2D graphics with suppport for interactvivity and animation.
+	the SVG specification defines 14 functional areas or feature sets.	
+	Paths,Basic Shapes, Text Color Interactivity Linking Animation 
+	svg images require a load of resources.
+	it is primarily used for creating animations or web graphics.
+	for creating polygns and polylines we need co ordinates.
+	
+
+3	Advance concepts in SVG(2:51) Create Ploygons and Polylines
+	just we need points in the form of x and y co ordiates.
+	<link ref="stylesheet" type="text/css" href="styl.css">
+	
+
+4	Select Elements in D3JS(3:22)
+	setup a environment to write a code in d3js k in this stylesheet js file and html files are created.
+
+5	Joining Data in D3JS V5(5:07)
+	how to bind data or elements directly on javascript files or by loading external sources.
+	the data() and enter() methods are used in this section.
+	binding means associates elements with data.
+	it allows you to bridge the gap between tha data and the elements on your page.
+	in browser console check this
+	console.log(canvas)
+
+6	create  a bar graph(5:45)
+	check this
+
+7	Create a Scatter Plot(7:19)
+	scatterplot show the example.it is useful when u have u r data in close range.
+8	Create a Line chart(7:04)
+
+9	The collapsable Diagram(2:03)
+
+10	Have fun with Maps and GeoJSON(3:55)

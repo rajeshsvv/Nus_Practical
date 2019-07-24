@@ -1,0 +1,60 @@
+# class MyFloat:
+#     def __init__(self,whole,fraction):
+#         self.whole=whole
+#         self.fraction=fraction
+#
+#     def shownumber(self):
+#         print(f"Iam {self.whole}.{self.fraction}")
+#
+# f=MyFloat(3,-9)
+# f.shownumber()
+
+
+
+# class myclass:
+#     def __init__(self,age):
+#         self.age=age
+#     def __add__(self,other):
+#         return self.age+other
+#     def __radd__(self,other):
+#         return self.age+other
+#
+# a=myclass(-1)
+# print(a+3)
+
+
+#find power of number
+
+# class itspower:
+#     def __init__(self,x):
+#         self.x=x
+#
+#     def __pow__(self,other):
+#         return self.x**other.x
+#
+# a=itspower(3)
+# b=itspower(3)
+# print(a**b)
+
+
+# example of operator overloading
+
+class Person:
+    def __init__(self,name,age):
+        self.age=age
+        self.name=name
+    def __gt__(self,other):
+        if self.age>other.age:
+            return True
+        return False
+    def __abs__(self):
+        return abs(self.age)
+    def __iadd__(self,other):
+        return self.age+other.age
+
+Nick=Person("Nick",4)
+Angela=Person("Angela",7)
+
+
+
+

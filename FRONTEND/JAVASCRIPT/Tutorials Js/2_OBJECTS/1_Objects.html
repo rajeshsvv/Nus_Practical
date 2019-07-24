@@ -1,0 +1,125 @@
+<!-- JavaScript is an Object Oriented Programming (OOP) language. 
+A programming language can be called object-oriented 
+if it provides four basic capabilities to developers.
+
+Encapsulation − the capability to store related information, whether data or methods, 
+together in an object.
+
+Aggregation − the capability to store one object inside another object.
+
+Inheritance − the capability of a class to rely upon another class (or number of classes) 
+for some of its properties and methods.
+
+Polymorphism − the capability to write one function or method that works in a variety of different ways.
+
+Objects are composed of attributes. If an attribute contains a function, 
+it is considered to be a method of the object, otherwise the attribute is considered a property 
+
+User-Defined Objects
+All user-defined objects and built-in objects are descendants of an object called Object.
+
+The new Operator
+The new operator is used to create an instance of an object. 
+To create an object, the new operator is followed by the constructor method.
+
+In the following example, the constructor methods are Object(), Array(), and Date(). 
+These constructors are built-in JavaScript functions.
+
+The Object() Constructor
+A constructor is a function that creates and initializes an object. 
+JavaScript provides a special constructor function called Object() to build the object. 
+The return value of the Object() constructor is assigned to a variable.
+
+The variable contains a reference to the new object. 
+The properties assigned to the object are not variables and are not defined with the var keyword.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects</title>
+    <script type="text/javascript">
+
+    // create Different Different Objects
+    //  var employee=new Object();
+    //  var books=new Array("C","C+","Java");
+    //  var day=new Date("August 15,1947");
+    //  objectName.objectProperty = propertyValue;
+    //  var str = document.title;
+
+
+    // create instance with in built Object
+    //  var car=new Object();
+    //  car.company="BMW";
+    //  car.oil="Adani";
+
+    //  document.write("Car type is:"+car.company+"<br/>")
+    //  document.write("Car engine was:"+car.oil)
+
+    //  create object with User defined Function
+        
+    // Example 1:
+    // function car(company,tyre)
+    // {
+    //     this.company=company;
+    //     this.tyre=tyre;
+        
+    // }
+
+    // var newcar=new car("Lancer","Toyota","new");
+    // document.write("car name was:"+newcar.company+"<br/>");
+    // document.write("car tyre was:"+newcar.tyre);
+    
+        
+
+    // Defining Methods for an Object:
+    // this keyword is used to refer to the object that has been passed to a function.
+    // function amountprice(amount)
+    //     {
+    //         this.price=amount;
+    //     }
+    // function book(title,author)
+    //     {
+    //         this.title=title;
+    //         this.author=author;
+    //         this.amountprice=amountprice;   //Assign the method as property
+    //     }
+
+    // var myBook=new book("A Love Story","Chetan Bhagath");
+    // myBook.amountprice(500);
+    // document.write("book title was : "+myBook.title+"<br/>")
+    // document.write("book author was : "+myBook.author+"<br/>")
+    // document.write("book price was : "+myBook.price+"<br/>")
+
+
+    // With Keyword
+    // The ‘with’ keyword is used as a kind of shorthand for referencing an object's properties or methods.
+     // Define a function which will work as a method
+    function addPrice(amount) {
+            with(this){
+               price = amount;
+            }
+         }
+    function book(title, author) {
+            this.title = title;
+            this.author = author;
+            this.price = 0;
+            this.addPrice = addPrice;  // Assign that method as property.
+         }
+    var myBook = new book("Perl", "Mohtashim");
+    myBook.addPrice(100);
+    
+    document.write("Book title is : " + myBook.title + "<br>");
+    document.write("Book author is : " + myBook.author + "<br>");
+    document.write("Book price is : " + myBook.price + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

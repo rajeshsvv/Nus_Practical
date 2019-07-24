@@ -1,0 +1,90 @@
+ for second video:
+
+#Multi threading vs Multi processing
+# https://www.youtube.com/watch?v=oIN488Ldg9k
+
+# multithreading and multiprocessing both are achieve to perform multi tasking.
+# press control+shift+esc to see the windows process
+
+# Multiple thread live in same process
+# threads share some address space id but in case of process they have their own process ids.
+
+# threads are lightweight and process are heavy weight.
+process are different programs written by different companies.
+
+
+the difference between thread and process is error or memory leak in one process
+that does not hurt execution of any other process.
+
+
+2 video
+
+every process have own address space[virtual memory]
+thus program variables are not shared between two process.
+you need to interprocess communication(IPC) techniques if you want to share the data between the process
+interprocess communication(IPC) techniques:
+1)file on the disk
+2)shared memory(Value,Array,Queue)
+3)message pipe
+
+within process it has result
+outside process  it does not have result in case of multiprocessing.
+in case of u want to store the all variables in particular scenario.
+
+
+4 Video
+
+whenever u create a new process it will have new address space to store the variables etc.
+
+5 video
+
+when result global variable gets copied to this another process address spaceit creates a own copy.
+hence the result is seperate.
+when u want to communicate data in between two process
+u need to follow interprocess techniques k one is Queue.
+
+queue.put() (qnqueue)
+queue.get() (dequeue)
+
+
+remind one point 5:11
+
+python had queue module this is different from multiprocessing Queue k remember this.
+
+Multiprocessing Queue:                                   Queue Module:
+
+import multiprocessing                                  import queue
+q=multiprocessing.Queue()                               q=queue.Queue()
+lived in shared memory                                  lived in in-process memory
+used to share the data between the processes.           used to share the data between the threads.
+
+
+
+                        6 Multiprocessing Lock
+
+Lock is important for multiprocessors and operating systems concept.
+
+why lock is needed in real life?
+resources which cannot be access by two people at a same time.
+in same way in programming world when two  processes or threads are trying to access shared resource
+such as (Memory,Files,Databases etc).it can cause a problem.
+we need to protect that access with lock.
+
+
+  This section of code is called critical section whatever part of your code accessing the shared resource
+  which u want to protect that part is called critical section.
+
+
+        lock.acquire()
+        balance.value=balance.value+1
+        lock.release()
+
+
+                        7 Video Multiprocessing Pool (Map reduce)
+
+Map and Reduce(3:49)
+
+Map: you devide work between multiple units
+Reduce:Aggregate those results back one common or single output.
+
+from multiporcessing import Pool------------------> import this

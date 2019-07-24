@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Line Chart Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "DCJS\Tutorialspoint\LineChart\css\dc.css"/>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.js"></script>
+</head>
+<body>
+    <div>
+        <div id="line"></div>
+    </div>
+    <script>
+        var chart = dc.lineChart('#line');
+
+d3.csv("\DCJS\Tutorialspoint\people.csv", function(errors, people) {
+   var mycrossfilter = crossfilter(people);
+
+   var ageDimension = mycrossfilter.dimension(function(data) { 
+      return ~~((Date.now() - new Date(data.DOB)) / (31557600000)) 
+   });
+   var ageGroup = ageDimension.group().reduceCount();
+
+   chart
+        .width(800)
+        .height(300)
+        .x(d3.scale.linear().domain([15,70]))
+        .brushOn(false)
+        .yAxisLabel("Count")
+        .xAxisLabel("Age")
+        .dimension(ageDimension)
+        .group(ageGroup)
+        .on('renderlet', function(chart) {
+            chart.selectAll('rect').on('click', function(d) {
+                console.log('click!', d);
+            });
+        });
+    chart.render();
+    });
+    </script>
+    
+</body>
+</html>

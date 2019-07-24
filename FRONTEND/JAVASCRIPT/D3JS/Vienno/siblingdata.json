@@ -1,0 +1,30 @@
+{
+    "name":"Max",
+    "children":
+    [
+        {
+            "name":"Sylvia",
+            "children":
+            [
+                {"name":"Craig"},
+                {"name":"Robin"},
+                {"name":"Anna"},
+                {"name":"Santhosh"}
+
+            ]
+        },
+        {
+            "name":"David",
+            "children":
+            [
+                {"name":"Jeff"},
+                {"name":"Buffy"},
+                {"name":"Harsha"}
+            ]
+        },
+        {
+        "name":"Samuel",
+        "value":75
+        }
+    ]
+}

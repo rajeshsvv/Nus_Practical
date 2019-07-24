@@ -1,0 +1,80 @@
+<!-- The JavaScript navigator object includes a child object called plugins. 
+This object is an array, with one entry for each plug-in installed on the browser. 
+The navigator.plugins object is supported only by Netscape, Firefox, and Mozilla only. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multimedia</title>
+</head>
+<body>
+    <!-- <table border="1" cellpadding="1" cellspacing="1">
+    <tr>
+        <th>Plug-in Name</th>
+        <th>Filename</th>
+        <th>Description</th>
+    </tr>
+    <script language = "JavaScript" type = "text/javascript">
+        for (i = 0; i<navigator.plugins.length; i++) 
+        {
+            document.write("<tr><td>");
+            document.write(navigator.plugins[i].name);
+            document.write("</td><td>");
+            document.write(navigator.plugins[i].filename);
+            document.write("</td><td>");
+            document.write(navigator.plugins[i].description);
+            document.write("</td></tr>");
+        }
+    </script>
+    </table> -->
+
+
+    <!-- Checking for Plug-Ins -->
+    <!-- <script language = "JavaScript" type = "text/javascript">
+        media = navigator.mimeTypes["video/quicktime"];
+        
+        if (media) {
+           document.write("<embed src = '/3_ADVANCED\images\html.gif' height = 100 width = 100>");
+        } else {
+           document.write("<img src = '/3_ADVANCED\images\html.gif' height = 100 width = 100>");
+        }
+     </script>  -->
+
+<!-- Controlling Multimedia -->
+    <script type = "text/javascript">
+
+        function play() {
+            if (!document.demo.IsPlaying()) {
+                document.demo.Play();
+            }
+        }
+        function stop() {
+            if (document.demo.IsPlaying()) {
+                document.demo.StopPlay();
+            }
+        }
+        function rewind() {
+            if (document.demo.IsPlaying()) {
+                document.demo.StopPlay();
+            }
+            document.demo.Rewind();
+        }
+
+    </script>
+
+<embed id = "demo" name = "demo"
+    src = "http://www.DuckDuckGo.com"
+    width = "318" height = "300" play = "false" loop = "false"
+    pluginspage = "http://www.DuckDuckGo.com"
+    swliveconnect = "true">
+
+<form name = "form" id = "form" action = "http://www.DuckDuckGo.com" method = "get">
+    <input type = "button" value = "Start" onclick = "play();" />
+    <input type = "button" value = "Stop" onclick = "stop();" />
+    <input type = "button" value = "Rewind" onclick = "rewind();" />
+</form>
+</body>
+</html>

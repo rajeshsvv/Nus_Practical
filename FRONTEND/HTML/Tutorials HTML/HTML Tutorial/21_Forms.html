@@ -1,0 +1,168 @@
+<!-- HTML Forms are required, when you want to collect some data from the site visitor. 
+For example, during user registration you would like to collect information such as name, 
+email address, credit card, etc. 
+A form will take input from the site visitor and 
+then will post it to a back-end application such as CGI, ASP Script or PHP script etc.
+
+There are various form elements available like
+text fields, textarea fields, drop-down menus, radio buttons, checkboxes, etc.
+
+
+1	action
+
+Backend script ready to process your passed data.
+
+2	method
+
+Method to be used to upload data. The most frequently used are GET and POST methods.
+
+3	target
+
+Specify the target window or frame where the result of the script will be displayed. 
+It takes values like _blank, _self, _parent etc.
+
+4	enctype
+
+You can use the enctype attribute to specify how the browser encodes the data 
+before it sends it to the server. Possible values are −
+
+application/x-www-form-urlencoded − This is the standard method most forms use in simple scenarios.
+
+mutlipart/form-data − This is used when you want to upload binary data in the form of files like
+ image, word file etc.
+
+
+ HTML Form Controls
+There are different types of "form controls" that you can use to collect data using HTML form −
+
+1-Text Input Controls
+2-Checkboxes Controls
+3-Radio Box Controls
+4-Select Box Controls
+5-File Select boxes
+6-Hidden Controls
+7-Clickable Buttons
+8-Submit and Reset Button
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+</head>
+<body>
+    <!-- <form action="Script URL" method="GET">
+        Execute Form Attributes here
+    </form> -->
+
+<!-- 1-Text Input Controls:
+
+a-Single-line text input controls: 1-type 2-name 3-value 4-size  5-maxlength
+require only one line of user input, such as search boxes or names. 
+They are created using HTML <input> tag. -->
+    <!-- <form>
+        First Name:<input type="text" name="first_name"/>
+        <br/>
+        <br/>
+        Last Name:<input type="text" name="last name"/>
+    </form> -->
+
+
+<!-- b.Password input controls: 1-type 2-name 3-value 4-size  5-maxlength
+This is also a single-line text input but it masks the character as soon as a user enters it -->
+
+    <!-- <form >
+            User ID : <input type = "text" name = "user_id" />
+            <br>
+            Password: <input type = "password" name = "password" />
+    </form> -->
+
+<!-- c.Multiple-Line Text Input Controls: 1-name 2-rows 3-columns
+This is used when the user is required to give details that may be longer than a single sentence. 
+Multi-line input controls are created using HTML <textarea> tag. -->
+
+
+    <!-- <form>
+        Description:<br/>
+        <textarea rows="30" cols="50" name="dscription">
+            Enter Description Here
+        </textarea>
+    </form> -->
+
+<!-- Checkbox Control   type name value checked--> 
+    <!-- <form>
+        <input type="checkbox" name="maths" value="on">Maths
+        <input type="checkbox" name="physics" value="on">Physics
+    </form> -->
+
+
+<!-- Radio Button Control    type name value checked-->
+
+    <form>
+        <input type = "radio" name = "subject" value = "maths"> Maths
+        <input type = "radio" name = "subject" value = "physics"> Physics
+    </form>
+
+
+<!-- Select Box Control
+Select Tag Attributes   name     size        multiple  
+Option Tag Attributes   value   selected    label               -->
+    <form>
+        <select name="dropdown">
+            <option value="Maths" selected>Maths</option>
+            <option value="Physics">Physics</option>
+        </select>
+    </form>
+
+
+<!-- File Upload Box: Attributes->   name accept 
+If you want to allow a user to upload a file to your web site, 
+you will need to use a file upload box, also known as a file select box-->
+
+
+    <form>
+        <input type="file" name="fileupload" accept="image/*"/>
+    </form>
+
+<!-- Button Controls 
+
+1	submit
+This creates a button that automatically submits a form.
+
+2	reset
+This creates a button that automatically resets form controls to their initial values.
+
+3	button
+This creates a button that is used to trigger a client-side script when the user clicks that button.
+
+4	image
+This creates a clickable button but we can use an image as background of the button.
+-->
+            <form>
+                <input type="button" name="ok" value="OK"/>
+                <input type="submit" name="submit" value="Submit"/>
+                <input type="reset" name="reset" value="Reset"/>
+                <input type="image" name="imagebutton" src="\Tutorialspoint\images\ocean.jpg"/>
+            </form>
+
+
+
+<!-- Hidden Form Controls 
+
+Hidden form controls are used to hide data inside the page which later on can be pushed to the server. 
+This control hides inside the code and does not appear on the actual page   
+-->
+
+<form>
+        <p>This is page 10</p>
+        <input type = "hidden" name = "pagename" value = "10" />
+        <input type = "submit" name = "submit" value = "Submit" />
+        <input type = "reset" name = "reset"  value = "Reset" />
+</form>
+
+
+</body>
+</html>

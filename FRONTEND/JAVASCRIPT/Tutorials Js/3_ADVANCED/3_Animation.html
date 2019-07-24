@@ -1,0 +1,155 @@
+<!-- You can use JavaScript to create a complex animation having, 
+but not limited to, the following elements −
+
+Fireworks
+Fade Effect
+Roll-in or Roll-out
+Page-in or Page-out
+Object movements
+
+You might be interested in existing JavaScript based animation library: Script.Aculo.us.
+
+
+
+JavaScript can be used to move a number of DOM elements (<img />, <div> or any other HTML element) 
+around the page according to some sort of pattern determined by a logical equation or function.
+
+JavaScript provides the following two functions to be frequently used in animation programs.
+
+setTimeout( function, duration) − This function calls function after duration milliseconds from now.
+
+setInterval(function, duration) − This function calls function after every duration milliseconds.
+
+clearTimeout(setTimeout_variable) − This function calls clears any timer set by the setTimeout() functions.
+
+JavaScript can also set a number of attributes of a DOM object including its position on the screen. 
+You can set top and left attribute of an object to position it anywhere on the screen. 
+
+
+Manual Animation
+So let's implement one simple animation using DOM object properties and JavaScript functions as follows. The following list contains different DOM methods.
+
+We are using the JavaScript function getElementById() to get a DOM object 
+and then assigning it to a global variable imgObj.
+
+We have defined an initialization function init() to initialize imgObj 
+where we have set its position and left attributes.
+
+We are calling initialization function at the time of window load.
+
+Finally, we are calling moveRight() function to increase the left distance by 10 pixels. 
+You could also set it to a negative value to move it to the left side. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+
+    
+</head>
+<body>
+
+<!-- Manual Animation:
+So let's implement one simple animation using DOM object properties and JavaScript functions as follows. The following list contains different DOM methods.
+
+We are using the JavaScript function getElementById() to get a DOM object and
+then assigning it to a global variable imgObj.
+
+We have defined an initialization function init() to initialize imgObj 
+where we have set its position and left attributes.
+
+We are calling initialization function at the time of window load.
+
+Finally, we are calling moveRight() function to increase the left distance by 10 pixels. 
+You could also set it to a negative value to move it to the left side. -->
+<!-- <script type="text/javascript">
+    var imgObj = null;
+            
+            function init() {
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '2px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 30 + 'px';
+            }
+            
+            window.onload = init;
+</script> -->
+
+<!-- <img id = "myImage" src = "/3_ADVANCED\images\html.gif" />
+<p>Click button below to move the image to right</p>
+<input type = "button" value = "Click Me" onclick = "moveRight();" /> -->
+
+
+<!-- Automated Animation
+In the above example, we saw how an image moves to right with every click. 
+We can automate this process by using the JavaScript function setTimeout() as follows −
+
+Here we have added more methods. So let's see what is new here −
+
+The moveRight() function is calling setTimeout() function to set the position of imgObj.
+
+We have added a new function stop() to clear the timer set by setTimeout() function 
+and to set the object at its initial position. -->
+
+<!-- <script type = "text/javascript">
+    
+       var imgObj = null;
+       var animate ;
+       
+       function init() {
+          imgObj = document.getElementById('myImage');
+          imgObj.style.position= 'relative'; 
+          imgObj.style.left = '0px'; 
+       }
+       function moveRight() {
+          imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+          animate = setTimeout(moveRight,20);    // call moveRight in 20msec
+       }
+       function stop() {
+          clearTimeout(animate);
+          imgObj.style.left = 'px'; 
+       }
+       
+       window.onload = init;
+    
+ </script>
+
+<img id = "myImage" src = "/3_ADVANCED\images\html.gif" />
+<p>Click the buttons below to handle animation</p>
+<input type = "button" value = "Start" onclick = "moveRight();" />
+<input type = "button" value = "Stop" onclick = "stop();" />    -->
+
+
+
+<!-- Rollover with a Mouse Event -->
+
+<script type = "text/javascript">
+    
+       if(document.images) {
+          var image1 = new Image();     // Preload an image
+          image1.src = "/3_ADVANCED\images\html.gif";
+          var image2 = new Image();     // Preload second image
+          image2.src = "/3_ADVANCED\images\pc.jpg";
+       }
+    
+ </script>
+</head>
+
+<body>
+ <p>Move your mouse over the image to see the result</p>
+ 
+ <a href = "http://www.nousinfo.com" onMouseEnter = "document.myImage.src = image1.src;"
+    onMouseOut = "document.myImage.src = image2.src;">
+    <img name = "myImage" src = "/3_ADVANCED\images\track.jpg" />
+ </a>
+</body>
+
+</body>
+</html> 

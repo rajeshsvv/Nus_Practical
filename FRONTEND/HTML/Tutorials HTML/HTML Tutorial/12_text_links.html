@@ -1,0 +1,85 @@
+<!-- A webpage can contain various links that take you directly to other pages 
+and even specific parts of a given page. These links are known as hyperlinks. -->
+
+<!--
+1	
+_blank
+
+Opens the linked document in a new window or tab.
+
+2	
+_self
+
+Opens the linked document in the same frame.
+
+3	
+_parent
+
+Opens the linked document in the parent frame.
+
+4	
+_top
+
+Opens the linked document in the full body of the window.
+
+5	
+targetframe
+
+Opens the linked document in a named targetframe. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML TEXT LINKS</title>
+</head>
+<body>
+        <!-- <a href = "Document URL" ... attributes-list>Link Text</a>  -->
+        <!-- <a href="https://www.tutorialspoints.com" target="_self">Tutorials Points</a> -->
+
+<!-- Linking Documents -->
+
+        <!-- <p>Click following link</p> -->
+        <!-- use target attribute as different elements like _blank,_self,_parent,_top,targetframe -->
+        <!-- <a href = "https://www.tutorialspoint.com" target = "_blank">Open in New</a>&nbsp;
+        <a href = "https://www.tutorialspoint.com" target = "_self">Open in Self</a>&nbsp;
+        <a href = "https://www.tutorialspoint.com" target = "_parent">Open in Parent</a>&nbsp;
+        <a href = "https://www.tutorialspoint.com" target = "_top">Opens in Body</a>&nbsp; -->
+        <!-- <a href = "https://www.tutorialspoint.com" target = "targetframe">Tutorials Point</a> -->
+
+<!-- Use of Base Path -->
+<!-- When you link HTML documents related to the same website, 
+it is not required to give a complete URL for every link. 
+You can get rid of it if you use <base> tag in your HTML document header -->
+
+        <!-- <p>Click following link</p>
+        <a href = "/html/index.htm" target = "_blank">HTML Tutorial</a> -->
+        
+
+<!-- Linking to a Page Section -->
+<!-- You can create a link to a particular section of a given webpage by using name attribute. 
+This is a two-step process.
+
+Note − The name attribute deprecated in HTML5. Do not use this attribute. 
+Use id and title attribute instead. -->
+
+
+<!-- Setting Link Colors -->
+
+<!-- <body alink = "#54A250" link = "#040404" vlink = "#F40633">
+        <p>Click following link</p>
+        <a href = "/html/index.htm" target = "_blank" >HTML Tutorial</a>   -->
+
+
+
+<!-- Download Links -->
+
+<a href = "https://www.tutorialspoint.com/page.pdf">Download PDF File</a>
+</body>
+</html>
+
+
+
+

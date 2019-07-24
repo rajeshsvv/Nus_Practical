@@ -1,0 +1,96 @@
+<!-- By default, your webpage background is white in color
+You may not like it, but no worries. 
+HTML provides you following two good ways to decorate your webpage background. -->
+
+<!-- 1-HTML Background with Colors
+2-HTML Background with Images -->
+
+<!-- Html Background with Colors -->
+
+<!-- The bgcolor attribute is used to control the background of an HTML element, 
+specifically page body and table backgrounds.
+
+The bgcolor attribute deprecated in HTML5. Do not use this attribute -->
+
+
+<!-- Html Background with Images -->
+
+<!-- The background attribute can also be used to control the background of an HTML element, 
+specifically page body and table backgrounds. 
+You can specify an image to set background of your HTML page or table.
+
+Note − The background attribute is deprecated and 
+it is recommended to use Style Sheet for background setting. -->
+
+<!-- Patterned & Transparent Backgrounds -->
+<!-- You might have seen many pattern or transparent backgrounds on various websites. 
+This simply can be achieved by using patterned image or transparent image in the background.
+
+It is suggested that while creating patterns or transparent GIF or PNG images, 
+use the smallest dimensions possible even as small as 1x1 to avoid slow loading. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Backgrounds</title>
+</head>
+<body>
+    <!-- Format 1 - Use color name -->
+    <table bgcolor = "yellow" width = "100%">
+            <tr>
+               <td>
+                  This background is yellow
+               </td>
+            </tr>
+         </table>
+    
+         <!-- Format 2 - Use hex value -->
+    <table bgcolor = "#6666FF" width = "100%">
+    <tr>
+        <td>
+            This background is sky blue
+        </td>
+    </tr>
+    </table>
+    
+         <!-- Format 3 - Use color value in RGB terms -->
+    <table bgcolor = "rgb(255,0,255)" width = "100%">
+    <tr>
+        <td>
+            This background is green
+        </td>
+    </tr>
+    </table>
+
+
+    <table background = "\Tutorialspoint\Images\pc.png" width = "100%" height = "100">
+        <tr><td>
+           This background is filled up with HTML image.
+        </td></tr>
+    </table>
+
+    <!-- Set a table background using pattern -->
+    <table background = "\Tutorialspoint\Images\tatoo.png" width = "100%" height = "100">
+        <tr>
+           <td>
+              This background is filled up with a pattern image.
+           </td>
+        </tr>
+     </table>
+
+     <!-- Another example on table background using pattern -->
+     <table background = "\Tutorialspoint\Images\track.png" width = "100%" height = "100">
+        <tr>
+           <td>
+              This background is filled up with a pattern image.
+           </td>
+        </tr>
+     </table>
+    
+</body>
+</html>

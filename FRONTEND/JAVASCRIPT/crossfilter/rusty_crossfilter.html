@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rusty Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <a href="http://blog.rusty.io/2012/09/17/crossfilter-tutorial/">Refer Link For CrossFIlter</a>
+    <div>
+<script type="text/javascript">    
+    var data = crossfilter([
+        // Fact data.
+        { name: 'Rusty',  type: 'human', legs: 2 },
+        { name: 'Alex',   type: 'human', legs: 2 },
+        { name: 'Lassie', type: 'dog',   legs: 4 },
+        { name: 'Spot',   type: 'dog',   legs: 4 },
+        { name: 'Polly',  type: 'bird',  legs: 2 },
+        { name: 'Shannu',  type: 'plant', legs: 6 },
+        { name: 'Shannu',  type: 'plant', legs: 0 }
+    ]);
+    
+    1   // Calculating Totals:
+    var count=data.groupAll().reduceCount().value();
+    
+
+    2   // Now let’s get a count of all the legs in my house. 
+    // Again, we’ll use the groupAll function to get all records in a single group, 
+    // but then we call the reduceSum function. This is going to sum values together. 
+    // What values? Well, we want legs, so let’s pass a function that extracts and 
+    // returns the number of legs from the fact
+
+    var countlegs=data.groupAll().reduceSum(function(fact)
+    {
+        return fact.legs;
+    }).value();
+
+    3   //Filtering
+    // Now let’s test out some of the filtering functionality.
+
+    // I want to know how many living things in my house are dogs, and how many legs they have. 
+    // For this, we’ll need a dimension . Remember that a dimension is something you want to group or filter by. 
+    // Here, the dimension is going to be the type . 
+    // Crossfilter can filter on dimensions in two ways, 
+    // either by exact value, or by range.
+
+    
+    var typeDimension=data.dimension(function(d){
+        return d.type;
+    });
+    typeDimension.filter("dog")
+
+    var filter=data.groupAll().reduceCount().value();
+
+    var legs=data.groupAll().reduceSum(function(d){
+        return d.legs;
+    }).value();
+
+    4   //Let’s clear the filter, then do some grouping.
+
+    // Clear the filter.
+
+    typeDimension.filterAll();
+
+    
+    5   // Grouping with Crossfilter
+    // I want to know how many living things of each type are in my house. 
+    // I already have a dimension grouped by type called typeDimension .
+
+    // Using typeDimension , I’m going to group the records by type, 
+    // and then create a measure that returns the count called countMeasure . 
+    // Once countMeasure is created, we can find the number of entries by calling countMeasure.size() 
+    // (a.k.a the cardinality of the type dimension), 
+    // and we can get the actual counts by calling countMeasure.top(size).
+
+    var thingscountMeasure=typeDimension.group().reduceCount();
+    var a=thingscountMeasure.top(4)
+
+    6   // How many legs of each type are in my house?
+    var thingslegMeasure = typeDimension.group().reduceSum(function(fact) { return fact.legs; });
+    var b = thingslegMeasure.top(4);
+
+    7   // Filtering Gotchas
+    // As mentioned earlier, when you filter on a dimension, and then roll-up using said dimension, 
+    // Crossfilter intentionally ignores any filter an said dimension.
+
+
+    // For example, this does not return what you would expect:
+
+    // Filter for dogs.
+    typeDimension.filter("dog")
+
+    // How many living things of each type are in my house?
+    // You’d expect this to return 0 for anything other than dogs,
+    // but it doesn’t because the following statement ignores any
+    // filter applied to typeDimension:
+    var countMeasure = typeDimension.group().reduceCount();
+    var c = countMeasure.top(4);
+
+
+    8   // The workaround is to create another dimension on the same field, and filter on that:
+
+    // Filter for dogs.
+    var typeFilterDimension = data.dimension(function(fact) { return fact.type; });
+    typeFilterDimension.filter('plant')
+
+    // Now this returns what you would expect.
+    var countMeasure = typeDimension.group().reduceCount();
+    var d = countMeasure.top(4);
+    
+    document.write("the total count was:",count)
+    document.write("<br>");
+    document.write("the legs count was:",countlegs)
+    document.write("<br>");
+    document.write("The Number of Dogs are:",filter)
+    document.write("<br>");
+    document.write("The Legs for Dog:",legs)
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("There are "+a[0].value+" "+a[0].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+a[1].value+" "+a[1].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+a[2].value+" "+a[2].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+a[3].value+" "+a[3].key+"s in my house.");
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("There are "+b[0].value +" "+b[0].key+" legs in my house.");
+    document.write("<br>");
+    document.write("There are "+b[1].value +" "+b[1].key+" legs in my house.");
+    document.write("<br>");
+    document.write("There are "+b[2].value +" "+b[2].key+" legs in my house.");
+    document.write("<br>");
+    document.write("There are "+b[3].value +" "+b[3].key+" legs in my house.");
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("There are "+c[0].value+" "+c[0].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+c[1].value+" "+c[1].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+c[2].value+" "+c[2].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+c[3].value+" "+c[3].key+"s in my house.");
+    document.write("<br>");
+    document.write("<br>");
+
+    document.write("There are "+d[0].value+" "+d[0].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+d[1].value+" "+d[1].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+d[2].value+" "+d[2].key+"s in my house.");
+    document.write("<br>");
+    document.write("There are "+d[3].value+" "+d[3].key+"s in my house.");
+    document.write("<br>");
+    document.write("<br>");
+
+    </script>
+    </div>
+            
+    
+</body>
+</html>

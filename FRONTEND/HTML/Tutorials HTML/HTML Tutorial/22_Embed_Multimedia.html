@@ -1,0 +1,87 @@
+<!-- Sometimes you need to add music or video into your web page. 
+The easiest way to add video or sound to your web site is to include the special HTML tag called <embed>.
+
+You can also include a <noembed> tag for the browsers which don't recognize the <embed> tag. 
+
+
+The <embed> Tag Attributes
+The align and autostart attributes deprecated in HTML5. Do not use these attributes.
+
+align   autostart   loop    playcount   hidden
+width   height      name    src         volume 
+
+
+Supported Video Types:
+    .swf files − are the file types created by Macromedia's Flash program.
+
+    .wmv files − are Microsoft's Window's Media Video file types.
+
+    .mov files − are Apple's Quick Time Movie format.
+
+    .mpeg files − are movie files created by the Moving Pictures Expert 
+
+Background Audio:
+You can use HTML <bgsound> tag to play a soundtrack in the background of your webpage. 
+This tag is supported by Internet Explorer only and most of the other browsers ignore this tag. 
+It downloads and plays an audio file when the host document is first downloaded by the user 
+and displayed. The background sound file also will replay whenever the user refreshes the browser.
+
+Note − The bgsound tag is deprecated and it is supposed to be removed in a future version of HTML. 
+So they should not be used rather, it's suggested to use HTML5 tag audio for adding sound. 
+But still for learning purpose, this chapter will explain bgsound tag in detail.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Embed Multimedia</title>
+</head>
+<body>
+        <embed src = "\Tutorialspoint\images\Puvvalle Navvinchi.mp3" width = "90%" height = "100" 
+        name="music player" >
+            <noembed><img src = "Tutorialspoint\images\tatoo.png" alt = "Alternative Media" ></noembed>
+         </embed>
+
+
+<!-- Background Audio -->
+
+<bgsound src = "\Tutorialspoint\images\Puvvalle Navvinchi.mp3">
+    <noembed><img src = "yourimage.gif" ></noembed>
+ </bgsound>
+
+ <!-- HTML Object tag -->
+
+ <!-- HTML 4 introduces the <object> element, 
+which offers an all-purpose solution to generic object inclusion. 
+The <object> element allows HTML authors to specify everything required by an object 
+for its presentation by a user agent. -->
+        <object data = "data/test.htm" type = "text/html" width = "300" height = "200">
+                alt : <a href = "data/test.htm">test.htm</a>
+        </object>
+        <object data = "data/test.pdf" type = "application/pdf" width = "300" height = "200">
+            alt : <a href = "data/test.pdf">test.htm</a>
+         </object>
+         <object data = "data/test.wav" type = "audio/x-wav" width = "200" height = "20">
+            <param name = "src" value = "data/test.wav">
+            <param name = "autoplay" value = "false">
+            <param name = "autoStart" value = "0">
+            alt : <a href = "data/test.wav">test.wav</a>
+         </object>
+        <object classid = "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id = "penguin" 
+                codebase = "someplace/swflash.cab" width = "200" height = "300">
+
+                <param name = "movie" value = "flash/penguin.swf" />
+                <param name = "quality" value = "high" />
+                <img src = "penguin.jpg" width = "200" height = "300" alt = "Penguin" />
+        </object>
+
+        <object classid = "clsid:8ad9c840-044e-11d1-b3e9-00805f499d93" 
+            width = "200" height = "200">
+            <param name = "code" value = "applet.class">
+        </object>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enter Update Exit</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <script>
+        // var data=[10,20,30];                    //for enter and update purpose these are data elements
+            var data=[10]                           //for exit purpose
+
+        var canvas=d3.select("body")
+                    .append("svg")
+                    .attr("width",500)
+                    .attr("height",500)
+
+        var circle1=canvas.append("circle")         //these are DOM elemens
+                        .attr("cx",50)
+                        .attr("cy",100)
+                        .attr("r",25)
+                        .attr("fill","violet")
+                        
+
+        var circle2=canvas.append("circle")         //these are DOM elemens
+                        .attr("cx",50)
+                        .attr("cy",200)
+                        .attr("r",25)
+                        .attr("fill","orange")
+
+                        
+        var circle3=canvas.append("circle")      //these are DOM elemens
+                        .attr("cx",50)
+                        .attr("cy",300)
+                        .attr("r",25)
+                        .attr("fill","violet")
+
+        // var circles=canvas.selectAll("circle")   
+        //             .data(data)
+        //             .attr("fill","#00FF00")
+        //             .enter()
+        //                 .append("circle")
+        //                 .attr("cx",250)
+        //                 .attr("cy",150)
+        //                 .attr("r",25)
+        //                 .attr("fill","yellow");
+
+        // for update purpose k                        
+            var circles=canvas.selectAll("circle")
+                        .data(data)
+                        .attr("fill","red")
+                        .exit()
+                        .attr("fill","SKYBLUE")
+    </script>
+</body>
+</html>
