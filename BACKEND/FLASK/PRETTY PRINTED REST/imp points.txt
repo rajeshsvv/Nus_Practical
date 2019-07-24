@@ -5,19 +5,12 @@ open terminal and enter into python command
 from api import db
 db.create_all()
 
-app.config["SECRET_KEY"]="thissecret"
-basedir = os.path.abspath(os.path.dirname(__file__))
-# Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'todo.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['SQLALCHEMY_DATABAESE_URI']='sqlite3:///D:\NOUS\DEVELOPER\BACKEND\FLASK\PRACTICE\PRETTY PRINTED REST\todo.db'
 
 
 then sqlite file will be generated in project directory.
 
 then u exit from python terminal by enter exit() ok.
 
-sqlite3 todo.db (this is not working in windows just check once)
 
 jsonify is for to return the information in json format(10:57)
 uuid is for to generate random public id.
@@ -33,7 +26,7 @@ get all the users method then it will give password hash k
 get all users (15:50)
 loop over the result because he dont want put the data into json object directly..
 need to create a new list to store the result.
-righthand side is the result from the database & from lefthand side is the new dictionary we creating.
+right hand side is the result from the database & from left hand side is the new dictionary we creating.
 
 lets get started working on the actual authentication.
 
@@ -46,7 +39,8 @@ without having to login using username and password every single time.
 
 first meaning the only user because the name should be unique.(24:30)
 
-import jwt (this will get error because u dont have jwt first so install by this command pip install PyJWT==1.0.1)
+import jwt (this will get error because u dont have jwt first so install by this command
+pip install PyJWT==1.0.1)
 
 26:38
 expiration will be typical UNIX UTC timestamp
@@ -55,7 +49,7 @@ app.config['SECRET-KEY'] to encode the token
 
 27:41
 
-there are three cases in login gets passed back when they dont supply any authorization information 
+there are three cases in login gets passed back when they don't supply any authorization information
 when there is no user in the database for the user they pass in 
 or the password is incorrect.
 
