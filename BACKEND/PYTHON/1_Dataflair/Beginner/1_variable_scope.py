@@ -19,7 +19,7 @@
 
 #Enclosing scope
 
-
+a=5
 def red():
     a=1
     def blue():
@@ -31,6 +31,7 @@ def red():
     print(a)
 
 red()
+print(a)
 
 
 # Global Scope

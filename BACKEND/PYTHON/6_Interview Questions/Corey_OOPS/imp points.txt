@@ -1,0 +1,62 @@
+2 class variables:
+              class variables are variables shared among all instances of class
+              instance variables are unique to each instance of the class.
+
+              init method runs every time when we create new employee.
+
+3 class methods vs static methods:
+    regular methods in class automatically takes the self as the  instance as the first argument
+
+    decorator altering the functionality of the method.
+    cls as received as first argument instead of the instance.
+    class methods use as alternative constructors to provide multiple ways of creating our objects.
+10:24   static methods:
+        regular methods automatically pass the instance as the first argument like self.
+
+        for class method we use @classmethod decorator
+        class methods automatically pass the instances as the first argument like cls.
+        static methods automatically pass the instances as the first argument as empty.(no need pass anything)
+        (they don't pass instance or class as the argument)
+
+        for static method we use @staticmethod decorator.
+        static method does not depend on any instance or class method.
+
+
+4 Inheritance
+        Inheritance allows us to Inherit attributes and methods from parent class.
+Method Resolution Order---3:34
+            it will go from down to top
+            it will check like that first within the class if it is not found then it will
+            check in parent class
+            every class in python inherits from base object.
+11:37
+           you never want to pass mutable data types in parameters like lists or dictionary
+            as default arguments
+
+17:00        python has two built in functions isinstance and issubclass
+            isinstance-->if an object is an instance of class
+            issubclass-->if a class is subclass of another class
+
+               python whisky library  is very popular library
+
+
+
+
+5 Special(Magic/Dunder) Methods
+
+repr            used for debugging purpose for another developers
+str             used for display output to users. it is readable format.
+
+
+6 Property Decorator:
+
+2:18    it allows define a method but we can access it like an attribute
+4:00    define our mail in our class like method but we can access it like attribute.
+
+
+
+
+
+
+
+

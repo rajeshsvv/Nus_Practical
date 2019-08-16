@@ -3,9 +3,9 @@ print(x[2:2])
 
 
 y="Hello"
-print(y[::-5])
+print(y[:-3:])
 
-print(list(range(9,2,-1)))
+print(list(range(9,-2,1)))
 
 from collections import Counter
-print(Counter([1,3,2,1,4,2,1,3,1,50,50,60,60]))
+print(Counter([1,3,2,1,4,2,1,3,1,50,50,60,600]))

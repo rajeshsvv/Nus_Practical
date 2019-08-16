@@ -35,6 +35,7 @@ print(dictdata)
 gen=(i**i for i in range(1,5))
 print(gen)
 print(next(gen))
+print(next(gen))
 
 
 #iterator
@@ -73,3 +74,5 @@ months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 
 oddMonths = [iter for index, iter in enumerate(months) if (index%2 == 0)]
 oddMonths
 
+item=[n*2 for n in range(10)]
+print(item)

@@ -1,0 +1,2 @@
+django rest framework login     username    rajeshvs
+                                password    tutorial143
