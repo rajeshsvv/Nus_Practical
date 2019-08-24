@@ -60,7 +60,7 @@ print(fun(data[0]))                                # answer:4
 
 
 arr = [[1, 2, 3, 4],[4, 5, 6, 7],[8, 9, 10, 11],[12, 13, 14, 15]]
-for i in range(0, 4):
+for i in range(0,4):
     print(arr[i].pop())                           # answer:4 7 11 15
 
 

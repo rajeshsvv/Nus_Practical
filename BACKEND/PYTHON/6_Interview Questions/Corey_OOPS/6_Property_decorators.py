@@ -11,6 +11,7 @@ class Employee:
     @property
     def email(self):
         return '{}.{}.@gmail.com'.format(self.first,self.last)
+
     @fullname.setter
     def fullname(self,name):
         first,last=name.split(' ')

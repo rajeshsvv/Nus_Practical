@@ -40,9 +40,11 @@ print(next(gen))
 
 #iterator
 
+
 iterate=iter(['a','b','c'])
 print(iterate)
 
+print(next(iterate))
 print(next(iterate))
 
 
@@ -76,3 +78,5 @@ oddMonths
 
 item=[n*2 for n in range(10)]
 print(item)
+
+

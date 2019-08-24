@@ -2,7 +2,7 @@
               class variables are variables shared among all instances of class
               instance variables are unique to each instance of the class.
 
-              init method runs every time when we create new employee.
+              init method runs every time when we create new employee object.
 
 3 class methods vs static methods:
     regular methods in class automatically takes the self as the  instance as the first argument
@@ -44,7 +44,7 @@ Method Resolution Order---3:34
 
 5 Special(Magic/Dunder) Methods
 
-repr            used for debugging purpose for another developers
+repr            used for debugging purpose and for another developers to see the code.
 str             used for display output to users. it is readable format.
 
 

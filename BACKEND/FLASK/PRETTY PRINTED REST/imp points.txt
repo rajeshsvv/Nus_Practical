@@ -44,7 +44,7 @@ pip install PyJWT==1.0.1)
 
 26:38
 expiration will be typical UNIX UTC timestamp
-timedelta is for minutes =30 upto 30 minutes toke will alive(active) after that it will expires.
+timedelta is for minutes =30 up to 30 minutes toke will alive(active) after that it will expires.
 app.config['SECRET-KEY'] to encode the token
 
 27:41
